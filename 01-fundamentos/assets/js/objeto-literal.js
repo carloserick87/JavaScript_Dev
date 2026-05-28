@@ -32,3 +32,33 @@ const x = 'vivo';
 console.log('Vivo', personaje[x]);
 
 console.log('Ultima pelicula: ', personaje['ultima-pelicula']);
+
+
+
+/*  ----------------- Más detalles----------------- */
+
+// Eliminar una propiedad
+delete personaje.edad;
+console.log( personaje );
+
+// Crear una nueva propiedad en el objeto
+
+personaje.casado = true;
+
+// Convertir un objeto a un array
+const entriesPares = Object.entries( personaje);
+console.log( entriesPares );
+
+// bloquear que no se modifique el objeto
+Object.freeze( personaje );
+
+personaje.dinero = 100000;
+console.log( personaje );
+personaje.direccion.ubicacion = 'Costa Rica'; /* Para bloquear el cambio de los otros objetos se 
+vuelve a congelar con Object.freeze( personaje.direccion ) */
+console.log( personaje );
+
+// Listado de todas las propiedades de un objeto
+const propiedades = Object.getOwnPropertyNames( personaje );
+const valores = Object.values( personaje );
+console.log( propiedades,valores);
